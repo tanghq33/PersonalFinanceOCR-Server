@@ -20,8 +20,8 @@ async function main() {
     tls: true,
     connTimeout: 10000, // Default by node-imap
     authTimeout: 5000, // Default by node-imap,
-    debug: console.log, // Or your custom function with only one incoming argument. Default: null
-    // debug: null,
+    // debug: console.log, // Or your custom function with only one incoming argument. Default: null
+    debug: null,
     tlsOptions: { rejectUnauthorized: false },
     mailbox: "INBOX", // mailbox to monitor
     searchFilter: ["UNSEEN", "FLAGGED"], // the search filter being used after an IDLE notification has been retrieved
