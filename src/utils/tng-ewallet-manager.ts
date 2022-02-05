@@ -6,9 +6,7 @@ import { dateConverter } from './date-converter';
 
 export const TNGeWalletManager = {
 
-    readTNGeWalletTransactions: async (filename: string): Promise<string> => {
-        let dataBuffer = fs.readFileSync(filename);
-
+    readTNGeWalletTransactions: async (dataBuffer: Buffer): Promise<string> => {
         let options = {
             pagerender: render_page
         }
@@ -21,7 +19,7 @@ export const TNGeWalletManager = {
             return undefined;
         }
     },
-    exportTNGeWalletTransactionsCSV: (filename: string, transactions: Transaction[]): void => {
+    exportTNGeWalletTransactionsCSV: (transactions: Transaction[]): Buffer => {
         let output: string = 'Date,Payee,Note,Reference,Expense,Income\n';
 
         for (let i = 0; i < transactions.length; i++) {
@@ -39,9 +37,9 @@ export const TNGeWalletManager = {
             if (transaction.description.indexOf('Quick Reload Payment (via GO+') >= 0) continue;
 
             const date = dateConverter.toString(transaction.date);
-            const payee = transaction.description;
+            const payee = transaction.transactionType;
             const reference = transaction.reference;
-            const note = transaction.transactionType;
+            const note = transaction.description;
             // const note = `${transaction.transactionType} (Reference: ${transaction.reference})`;
             const debit = transaction.overallTransactionType == OverallTransactionType.Debit ? transaction.amount : 0;
             const credit = transaction.overallTransactionType == OverallTransactionType.Credit ? transaction.amount : 0;
@@ -49,7 +47,7 @@ export const TNGeWalletManager = {
             output += `${date},${payee},${note},${reference},${debit},${credit}\n`;
         }
 
-        fs.writeFileSync(filename, output);
+        return Buffer.from(output, 'utf8');
     }
 }
 

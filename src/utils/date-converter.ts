@@ -14,9 +14,9 @@ export const dateConverter = {
             throw new Error('Invalid date format!');
         }
     },
-    toString: (date: Date): string => {
+    toString: (date: Date, delimeter: string = '/'): string => {
         assert(date != undefined, 'Expects "date" parameter!');
 
-        return date.getDate().toString() + '/' + (date.getMonth() + 1).toString() + '/' + date.getFullYear().toString();
+        return date.getDate().toString() + delimeter + (date.getMonth() + 1).toString() + delimeter + date.getFullYear().toString();
     }
 }

@@ -35,7 +35,7 @@ export class Transaction {
 
 
     parse(line: string): void {
-        let transactionSplit = line.split('[@]');
+        let transactionSplit = line.split('[@]').filter(Boolean); // Filter out empty string
 
         if (transactionSplit.length == 8 || transactionSplit.length == 7) {
             this.date = dateConverter.fromString(transactionSplit[0].trim());
