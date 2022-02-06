@@ -1,0 +1,15 @@
+version: "1.0.0"
+
+services:
+  app:
+    container_name: personalfinanceocr-server
+    image: hqtang33/personalfinanceocr-server:1.0.0
+    restart: always
+    build: .
+    platform: linux/amd64
+    environment:
+      - IMAP_HOST=hostname.com
+      - IMAP_PORT=123
+      - EMAIL_ADDRESS=subdomain@domain.com
+      - EMAIL_PASSWORD=password
+      - TNG_BUDGETBAKERS_MAP=walletid:dest@domain.com;walletid:dest@domain.com

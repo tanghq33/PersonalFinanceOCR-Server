@@ -1,16 +1,16 @@
 import MailListener from "mail-listener-fixed2";
 import { Transaction } from "./models/transaction";
 import { TNGeWalletManager } from "./utils/tng-ewallet-manager";
-import dotenv from "dotenv"
+// import dotenv from "dotenv"
 import nodemailer from "nodemailer";
 import { dateConverter } from "./utils/date-converter";
 
 async function main() {
-  let result = dotenv.config();
+  // let result = dotenv.config();
 
-  if (result.error) {
-    throw result.error
-  }
+  // if (result.error) {
+  //   throw result.error
+  // }
 
   var mailListener = new MailListener({
     username: process.env.EMAIL_ADDRESS,
@@ -48,7 +48,7 @@ async function main() {
 
   mailListener.on("mail", function (mail, seqno, attributes) {
     // do something with mail object including attachments
-    console.log("emailParsed", mail);
+    // console.log("emailParsed", mail);
     // mail processing code goes here
 
     mailListener.imap.seq.addFlags(seqno, '\\Deleted', function (error) { console.log(error) });
