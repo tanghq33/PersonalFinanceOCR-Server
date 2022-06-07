@@ -173,7 +173,7 @@ function processAndSendStatement(value: string): void {
 
 function sendEmail(destinationAddress: string, filename: string, attachment: Buffer): void {
   var transporter = nodemailer.createTransport({
-    service: 'gmail',
+    service: 'Outlook365',
     auth: {
       user: process.env.EMAIL_ADDRESS,
       pass: process.env.EMAIL_PASSWORD,

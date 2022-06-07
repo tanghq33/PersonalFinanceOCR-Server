@@ -1,9 +1,12 @@
+# docker compose build
+# docker push hqtang33/personalfinanceocr-server:latest
+
 version: "1.0.0"
 
 services:
   app:
     container_name: personalfinanceocr-server
-    image: hqtang33/personalfinanceocr-server:1.0.0
+    image: hqtang33/personalfinanceocr-server:latest
     restart: always
     build: .
     platform: linux/amd64
@@ -13,3 +16,4 @@ services:
       - EMAIL_ADDRESS=subdomain@domain.com
       - EMAIL_PASSWORD=password
       - TNG_BUDGETBAKERS_MAP=walletid:dest@domain.com;walletid:dest@domain.com
+
