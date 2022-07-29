@@ -1,12 +1,15 @@
 {
   "name": "personalfinanceocr-server",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "",
   "main": "index.js",
   "scripts": {
     "dev": "ts-node src/app.ts",
     "start": "ts-node dist/app.js",
-    "build": "tsc -p ."
+    "build": "tsc -p .",
+    "docker:build": "docker build -t hqtang33/personalfinanceocr-server .",
+    "docker:login": "docker login --username $DOCKERHUB_USERNAME --password-stdin $DOCKERHUB_ACCESS_TOKEN",
+    "docker:push": "docker push hqtang33/personalfinanceocr-server:latest"
   },
   "keywords": [],
   "author": "",

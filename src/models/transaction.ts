@@ -2,7 +2,8 @@ import { execPath } from 'process';
 import { OverallTransactionType } from '../enums/overall-transaction-type';
 import { dateConverter } from '../utils/date-converter';
 
-const CREDIT_TRANSACTIONS: string[] = ['Balance Top Up',
+const CREDIT_TRANSACTIONS: string[] = [
+    'Balance Top Up',
     'Reload',
     'eWallet Cash In',
     'GO+ Cash In',
@@ -11,16 +12,20 @@ const CREDIT_TRANSACTIONS: string[] = ['Balance Top Up',
     'Refund',
     'Cashback',
     'Cash Reward',
-    'GO+ PromoReward'];
+    'GO+ PromoReward'
+];
 
-const DEBIT_TRANSACTIONS: string[] = ['DuitNow QR TNGD',
+const DEBIT_TRANSACTIONS: string[] = [
+    'DuitNow QR TNGD',
     'DuitNow QR',
     'PayDirect Payment',
     'RFID Payment',
     'eWallet Cash Out',
     'GO+ Cash Out',
     'Transfer to Wallet',
-    'Payment'];
+    'Payment',
+    'DUITNOW_TRANSFERTO'
+];
 
 export class Transaction {
     date: Date;
