@@ -12,7 +12,7 @@ const CREDIT_TRANSACTIONS: string[] = [
     'Refund',
     'Cashback',
     'Cash Reward',
-    'GO+ PromoReward'
+    'GO+ PromoReward',
 ];
 
 const DEBIT_TRANSACTIONS: string[] = [
@@ -24,7 +24,8 @@ const DEBIT_TRANSACTIONS: string[] = [
     'GO+ Cash Out',
     'Transfer to Wallet',
     'Payment',
-    'DUITNOW_TRANSFERTO'
+    'DUITNOW_TRANSFERTO',
+    'Payment Cancelled',
 ];
 
 export class Transaction {

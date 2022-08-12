@@ -35,6 +35,7 @@ export const TNGeWalletManager = {
             if (transaction.transactionType.indexOf('Cash Out') >= 0) continue;
             if (transaction.description.indexOf('Via FPX to GO+') >= 0) continue;
             if (transaction.description.indexOf('Quick Reload Payment (via GO+') >= 0) continue;
+            if (transaction.status.indexOf('Reversed') >= 0) continue;
 
             const date = dateConverter.toString(transaction.date);
             const payee = transaction.transactionType;
