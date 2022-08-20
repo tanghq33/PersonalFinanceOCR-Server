@@ -13,6 +13,7 @@ const CREDIT_TRANSACTIONS: string[] = [
     'Cashback',
     'Cash Reward',
     'GO+ PromoReward',
+    'DUITNOW_RECEIVEFROM',
 ];
 
 const DEBIT_TRANSACTIONS: string[] = [
